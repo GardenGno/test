@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CatTech Arena</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">CATTECH ARENA</p>
+          <h1>Кибер-арена котов</h1>
+          <p class="subtitle">
+            Создавай котов, прокачивай параметры и устраивай дуэли за контроль
+            над кибер-территорией.
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="glow"></div>
+          <h2>Миссия</h2>
+          <p>
+            Поймай соперника после победы, сформируй команду и стань легендой
+            неонового мегаполиса.
+          </p>
+        </div>
+      </header>
+
+      <section class="panel" id="auth-panel">
+        <div>
+          <h2>Авторизация</h2>
+          <p class="hint">
+            Вход по демо-аккаунтам: <strong>admin/admin123</strong> или
+            <strong>trainer/trainer123</strong>
+          </p>
+        </div>
+        <form id="login-form">
+          <input name="username" placeholder="Логин" required />
+          <input
+            name="password"
+            type="password"
+            placeholder="Пароль"
+            required
+          />
+          <button type="submit">Войти</button>
+        </form>
+        <div id="login-status" class="status"></div>
+      </section>
+
+      <section class="panel" id="cats-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Коты</h2>
+            <p class="hint">Каталог бойцов с характеристиками.</p>
+          </div>
+          <button id="refresh-cats">Обновить</button>
+        </div>
+        <div class="cats-grid" id="cats-grid"></div>
+      </section>
+
+      <section class="panel" id="create-panel">
+        <div>
+          <h2>Новый кот</h2>
+          <p class="hint">
+            Доступно для роли администратора. Добавьте имя, породу, фото и
+            параметры.
+          </p>
+        </div>
+        <form id="create-form" class="split-form">
+          <input name="name" placeholder="Имя" required />
+          <input name="breed" placeholder="Порода" required />
+          <input name="imageUrl" placeholder="URL фото" required />
+          <input name="description" placeholder="Описание" required />
+          <div class="stats-row">
+            <label>Сила <input name="strength" type="number" min="1" max="10" required /></label>
+            <label>Ловкость <input name="agility" type="number" min="1" max="10" required /></label>
+            <label>Интеллект <input name="intelligence" type="number" min="1" max="10" required /></label>
+            <label>Восприятие <input name="perception" type="number" min="1" max="10" required /></label>
+            <label>Удача <input name="luck" type="number" min="1" max="10" required /></label>
+          </div>
+          <button type="submit">Добавить кота</button>
+        </form>
+        <div id="create-status" class="status"></div>
+      </section>
+
+      <section class="panel" id="battle-panel">
+        <div>
+          <h2>Кото-битва</h2>
+          <p class="hint">
+            Выбери котов и отправь их на арену. Победитель может захватить
+            соперника.
+          </p>
+        </div>
+        <form id="battle-form" class="split-form">
+          <select name="challenger" required></select>
+          <select name="opponent" required></select>
+          <label class="checkbox">
+            <input type="checkbox" name="capture" />
+            Захватить после победы
+          </label>
+          <button type="submit">Начать бой</button>
+        </form>
+        <div id="battle-result" class="status"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
