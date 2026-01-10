@@ -5,6 +5,8 @@ import { Roles } from '../common/roles.decorator';
 import { RolesGuard } from '../common/roles.guard';
 import { BattleRequest, BattleResult, BattlesService } from './battles.service';
 
+type RequestWithUser = Request & { user: AuthUser };
+
 @Controller('battles')
 @UseGuards(AuthGuard, RolesGuard)
 export class BattlesController {
@@ -12,8 +14,8 @@ export class BattlesController {
 
   @Post()
   @Roles('trainer', 'admin')
-  battle(@Body() body: BattleRequest, @Req() req: Request): BattleResult {
-    const user = req.user as AuthUser;
+  battle(@Body() body: BattleRequest, @Req() req: RequestWithUser): BattleResult {
+    const user = req.user;
     return this.battlesService.resolveBattle(body, user.username);
   }
 }
