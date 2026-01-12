@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WishSpark — праздничные вишлисты</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">WishSpark</div>
+        <div class="nav-actions">
+          <button class="ghost" id="show-auth">Войти или зарегистрироваться</button>
+          <button class="primary" id="show-profile">Мой профиль</button>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <span class="pill">Тёплая атмосфера · Подарки по любви</span>
+        <h1>Создавайте вишлисты и делитесь мечтами с друзьями</h1>
+        <p>
+          WishSpark помогает хранить желания, отмечать приоритеты подарков и
+          вдохновлять близких на сюрпризы.
+        </p>
+        <div class="hero-actions">
+          <button class="primary" id="cta-start">Начать пользоваться</button>
+          <button class="ghost">Как это работает</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="cards">
+        <article>
+          <h3>Праздничные профили</h3>
+          <p>Имя, дата рождения и пожелания — всё аккуратно собрано в одном месте.</p>
+        </article>
+        <article>
+          <h3>Огонечки приоритета</h3>
+          <p>Отметьте, что особенно важно — от 1 до 5 тёплых огней.</p>
+        </article>
+        <article>
+          <h3>Друзья и вдохновение</h3>
+          <p>Ищите друзей по имени и смотрите, что они хотят получить.</p>
+        </article>
+      </section>
+
+      <section class="panel" id="auth-panel">
+        <div class="panel-header">
+          <h2>Вход или регистрация</h2>
+          <p>Авторизуйтесь, чтобы получить доступ к своему списку желаний.</p>
+        </div>
+        <div class="panel-body">
+          <form class="auth-form">
+            <label>
+              Email
+              <input type="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              Пароль
+              <input type="password" placeholder="••••••••" />
+            </label>
+            <button class="primary" type="button">Войти</button>
+          </form>
+          <form class="auth-form">
+            <label>
+              Имя
+              <input type="text" placeholder="Алина" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              Пароль
+              <input type="password" placeholder="Не менее 6 символов" />
+            </label>
+            <button class="ghost" type="button">Зарегистрироваться</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="profile-panel">
+        <div class="panel-header">
+          <h2>Профиль пользователя</h2>
+          <p>Ваши желания и данные для друзей.</p>
+        </div>
+        <div class="profile-grid">
+          <div class="profile-card">
+            <h3>Анна Мельникова</h3>
+            <p class="muted">День рождения: 12 апреля</p>
+            <div class="tags">
+              <span>Город: Санкт-Петербург</span>
+              <span>Друзья: 8</span>
+            </div>
+          </div>
+          <div class="profile-card">
+            <h3>Мои подарки</h3>
+            <ul class="gift-list">
+              <li>
+                <div>
+                  <strong>Уютный плед</strong>
+                  <p class="muted">Важность: 🔥🔥🔥🔥</p>
+                </div>
+                <span>3 200 ₽</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Набор свечей</strong>
+                  <p class="muted">Важность: 🔥🔥🔥</p>
+                </div>
+                <span>1 500 ₽</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Абонемент в студию</strong>
+                  <p class="muted">Важность: 🔥🔥🔥🔥🔥</p>
+                </div>
+                <span>7 000 ₽</span>
+              </li>
+            </ul>
+            <button class="primary" type="button">Добавить подарок</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>WishSpark · праздничные вишлисты для друзей и семьи</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
