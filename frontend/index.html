@@ -49,33 +49,38 @@
         <div class="panel-header">
           <h2>Вход или регистрация</h2>
           <p>Авторизуйтесь, чтобы получить доступ к своему списку желаний.</p>
+          <p class="status" id="auth-status" role="status"></p>
         </div>
         <div class="panel-body">
-          <form class="auth-form">
+          <form class="auth-form" id="login-form">
             <label>
               Email
-              <input type="email" placeholder="you@example.com" />
+              <input type="email" name="email" placeholder="you@example.com" required />
             </label>
             <label>
               Пароль
-              <input type="password" placeholder="••••••••" />
+              <input type="password" name="password" placeholder="••••••••" required />
             </label>
-            <button class="primary" type="button">Войти</button>
+            <button class="primary" type="submit">Войти</button>
           </form>
-          <form class="auth-form">
+          <form class="auth-form" id="register-form">
             <label>
               Имя
-              <input type="text" placeholder="Алина" />
+              <input type="text" name="name" placeholder="Алина" required />
             </label>
             <label>
               Email
-              <input type="email" placeholder="you@example.com" />
+              <input type="email" name="email" placeholder="you@example.com" required />
             </label>
             <label>
               Пароль
-              <input type="password" placeholder="Не менее 6 символов" />
+              <input type="password" name="password" placeholder="Не менее 6 символов" required />
             </label>
-            <button class="ghost" type="button">Зарегистрироваться</button>
+            <label>
+              Дата рождения
+              <input type="date" name="birthDate" />
+            </label>
+            <button class="ghost" type="submit">Зарегистрироваться</button>
           </form>
         </div>
       </section>
@@ -84,42 +89,50 @@
         <div class="panel-header">
           <h2>Профиль пользователя</h2>
           <p>Ваши желания и данные для друзей.</p>
+          <p class="status" id="profile-status" role="status"></p>
         </div>
         <div class="profile-grid">
           <div class="profile-card">
-            <h3>Анна Мельникова</h3>
-            <p class="muted">День рождения: 12 апреля</p>
+            <h3 id="profile-name">Анна Мельникова</h3>
+            <p class="muted" id="profile-birthdate">День рождения: 12 апреля</p>
             <div class="tags">
               <span>Город: Санкт-Петербург</span>
               <span>Друзья: 8</span>
             </div>
+            <button class="ghost" id="logout-button" type="button">Выйти</button>
           </div>
           <div class="profile-card">
             <h3>Мои подарки</h3>
-            <ul class="gift-list">
-              <li>
-                <div>
-                  <strong>Уютный плед</strong>
-                  <p class="muted">Важность: 🔥🔥🔥🔥</p>
-                </div>
-                <span>3 200 ₽</span>
-              </li>
-              <li>
-                <div>
-                  <strong>Набор свечей</strong>
-                  <p class="muted">Важность: 🔥🔥🔥</p>
-                </div>
-                <span>1 500 ₽</span>
-              </li>
-              <li>
-                <div>
-                  <strong>Абонемент в студию</strong>
-                  <p class="muted">Важность: 🔥🔥🔥🔥🔥</p>
-                </div>
-                <span>7 000 ₽</span>
-              </li>
-            </ul>
-            <button class="primary" type="button">Добавить подарок</button>
+            <ul class="gift-list" id="gift-list"></ul>
+            <form class="gift-form" id="gift-form">
+              <label>
+                Название
+                <input type="text" name="title" placeholder="Например, уютный плед" required />
+              </label>
+              <label>
+                Стоимость
+                <input type="number" name="price" placeholder="3500" min="0" step="0.01" />
+              </label>
+              <label>
+                Приоритет
+                <select name="priority" required>
+                  <option value="5">🔥🔥🔥🔥🔥</option>
+                  <option value="4">🔥🔥🔥🔥</option>
+                  <option value="3" selected>🔥🔥🔥</option>
+                  <option value="2">🔥🔥</option>
+                  <option value="1">🔥</option>
+                </select>
+              </label>
+              <label>
+                Описание
+                <textarea name="description" rows="3" placeholder="Короткое описание"></textarea>
+              </label>
+              <label>
+                Фото (URL)
+                <input type="url" name="imageUrl" placeholder="https://..." />
+              </label>
+              <button class="primary" type="submit">Добавить подарок</button>
+            </form>
           </div>
         </div>
       </section>

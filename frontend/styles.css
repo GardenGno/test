@@ -156,6 +156,15 @@ input {
   font-size: 14px;
 }
 
+select,
+textarea {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #f2c6b6;
+  font-size: 14px;
+  font-family: inherit;
+}
+
 .profile-grid {
   display: grid;
   gap: 24px;
@@ -193,6 +202,22 @@ input {
   display: flex;
   justify-content: space-between;
   gap: 16px;
+}
+
+.gift-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #a24a4a;
+  min-height: 18px;
 }
 
 .muted {
